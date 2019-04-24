@@ -1,2 +1,12 @@
 <h1>Create a new Pet</h1>
 
+<form method='post' action='/pets'>
+
+  <input type='text' id='pet_name' name='pet[name]'><br>
+
+  <%@owners.each do |owner|%>
+  <input type='checkbox' name='pet[owner_id]' id='<%=owner.id%>' value="<%=owner.id%>"><%=owner.name%><br>
+  <%end%>
+  <input type='text' name='owner[name]' id='owner_name'>
+  <input type='submit' value='Create Pet'>
+</form>
